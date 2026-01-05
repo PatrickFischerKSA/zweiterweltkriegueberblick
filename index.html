@@ -1,0 +1,1924 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vorgeschichte zum Zweiten Weltkrieg – Überblick mit Karten (30 Fragen)</title>
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --panel:#121a2a;
+      --panel2:#0f1624;
+      --text:#e9eefc;
+      --muted:#a9b6d6;
+      --accent:#7aa7ff;
+      --accent2:#8bffcc;
+      --danger:#ff6b6b;
+      --warn:#ffd36b;
+      --ok:#7dff8b;
+      --line:rgba(255,255,255,.12);
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:26px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(122,167,255,.20), transparent 60%),
+        radial-gradient(900px 500px at 85% 15%, rgba(139,255,204,.14), transparent 65%),
+        radial-gradient(1200px 900px at 40% 90%, rgba(255,211,107,.10), transparent 70%),
+        linear-gradient(180deg, #070a10 0%, #0b0f17 45%, #070a10 100%);
+      overflow-x:hidden;
+    }
+
+    .wrap{
+      max-width:1160px;
+      margin:0 auto;
+      padding:22px 16px 40px;
+    }
+
+    header{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      padding:16px 16px 0;
+    }
+
+    .title{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      min-width:280px;
+    }
+    .title h1{
+      margin:0;
+      font-size: clamp(20px, 2.6vw, 34px);
+      letter-spacing:.2px;
+      line-height:1.08;
+    }
+    .title p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.35;
+      max-width:760px;
+    }
+
+    .top-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      padding-top:4px;
+    }
+
+    .btn{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:700;
+      color:var(--text);
+      background: rgba(122,167,255,.15);
+      outline: 1px solid rgba(122,167,255,.35);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      transition: transform .08s ease, background .18s ease, outline-color .18s ease;
+      user-select:none;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      white-space:nowrap;
+      font-size:14px;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(122,167,255,.20); outline-color: rgba(122,167,255,.55); }
+    .btn:active{ transform: translateY(0px) scale(.99); }
+    .btn.secondary{
+      background: rgba(255,255,255,.08);
+      outline-color: rgba(255,255,255,.18);
+    }
+    .btn.secondary:hover{
+      background: rgba(255,255,255,.11);
+      outline-color: rgba(255,255,255,.26);
+    }
+    .btn.danger{
+      background: rgba(255,107,107,.14);
+      outline-color: rgba(255,107,107,.35);
+    }
+    .btn.danger:hover{
+      background: rgba(255,107,107,.18);
+      outline-color: rgba(255,107,107,.55);
+    }
+    .btn.ok{
+      background: rgba(125,255,139,.12);
+      outline-color: rgba(125,255,139,.35);
+    }
+    .btn.ok:hover{
+      background: rgba(125,255,139,.16);
+      outline-color: rgba(125,255,139,.55);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:16px;
+      margin-top:16px;
+      padding:0 16px 18px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      outline: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .card .inner{
+      padding:16px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin:0 0 10px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .section-title .hint{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .videos{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    @media (max-width: 560px){
+      .videos{ grid-template-columns: 1fr; }
+    }
+
+    .vlink{
+      border-radius:18px;
+      background: rgba(255,255,255,.06);
+      outline: 1px solid rgba(255,255,255,.12);
+      padding:12px 12px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      min-height:92px;
+    }
+    .vlink strong{ font-size:13px; }
+    .vlink span{ color:var(--muted); font-size:12px; line-height:1.25; }
+    .vlink a{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      text-decoration:none;
+      color: var(--text);
+      font-weight:800;
+      background: rgba(122,167,255,.14);
+      outline: 1px solid rgba(122,167,255,.35);
+      border-radius:999px;
+      padding:9px 12px;
+      width:max-content;
+      transition: transform .08s ease, background .18s ease, outline-color .18s ease;
+      margin-top:auto;
+      font-size:13px;
+    }
+    .vlink a:hover{ transform: translateY(-1px); background: rgba(122,167,255,.18); outline-color: rgba(122,167,255,.55); }
+
+    .mapwrap{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+
+    .mapbox{
+      border-radius: 22px;
+      background: rgba(0,0,0,.18);
+      outline: 1px solid rgba(255,255,255,.12);
+      overflow:hidden;
+      position:relative;
+    }
+    .mapbox header{
+      padding:12px 14px 0;
+      margin:0;
+    }
+    .mapbox header h3{
+      margin:0;
+      font-size:14px;
+      letter-spacing:.2px;
+    }
+    .mapbox header p{
+      margin:6px 0 10px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.25;
+      padding:0;
+    }
+
+    svg{
+      width:100%;
+      height:auto;
+      display:block;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+
+    .legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      padding:10px 14px 14px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      outline: 1px solid rgba(255,255,255,.10);
+      white-space:nowrap;
+    }
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      display:inline-block;
+    }
+
+    .quiz{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .progress{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      padding:0 0 6px;
+    }
+    .bar{
+      height:10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.08);
+      outline: 1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+    }
+    .fill{
+      height:100%;
+      width:0%;
+      background: linear-gradient(90deg, rgba(122,167,255,.85), rgba(139,255,204,.80));
+      border-radius:999px;
+      transition: width .25s ease;
+    }
+    .meta{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .qcard{
+      border-radius: 22px;
+      background: rgba(255,255,255,.05);
+      outline: 1px solid rgba(255,255,255,.12);
+      padding:14px;
+    }
+
+    .qhead{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      justify-content:space-between;
+      margin-bottom:10px;
+      flex-wrap:wrap;
+    }
+    .qnum{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      font-weight:900;
+      letter-spacing:.3px;
+      font-size:12px;
+      color: var(--text);
+      background: rgba(122,167,255,.14);
+      outline: 1px solid rgba(122,167,255,.30);
+      padding:7px 10px;
+      border-radius:999px;
+    }
+    .qtopic{
+      color:var(--muted);
+      font-size:12px;
+      padding-top:6px;
+    }
+    .qtext{
+      margin:0;
+      font-size:16px;
+      line-height:1.3;
+      font-weight:900;
+      letter-spacing:.1px;
+    }
+
+    .answer-area{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .inputrow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    input[type="text"]{
+      flex: 1 1 260px;
+      border-radius: 14px;
+      padding:12px 12px;
+      font-size:14px;
+      color:var(--text);
+      background: rgba(0,0,0,.26);
+      outline: 1px solid rgba(255,255,255,.18);
+      border: none;
+    }
+    input[type="text"]:focus{
+      outline-color: rgba(122,167,255,.6);
+    }
+
+    .small{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.35;
+    }
+
+    .choices{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:8px;
+      margin-top:8px;
+    }
+    .choice{
+      border-radius: 16px;
+      background: rgba(0,0,0,.20);
+      outline: 1px solid rgba(255,255,255,.12);
+      padding:10px 10px;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      cursor:pointer;
+      user-select:none;
+      transition: transform .08s ease, outline-color .18s ease, background .18s ease;
+    }
+    .choice:hover{
+      transform: translateY(-1px);
+      outline-color: rgba(122,167,255,.40);
+      background: rgba(122,167,255,.06);
+    }
+    .choice:active{ transform: translateY(0px); }
+    .choice .letter{
+      width:26px;
+      height:26px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-family: var(--mono);
+      background: rgba(255,255,255,.10);
+      outline: 1px solid rgba(255,255,255,.15);
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .choice .ctext{
+      font-size:14px;
+      line-height:1.25;
+      font-weight:700;
+    }
+
+    .feedback{
+      border-radius: 16px;
+      padding:10px 10px;
+      outline: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      display:none;
+    }
+    .feedback.show{ display:block; }
+    .feedback.ok{
+      outline-color: rgba(125,255,139,.35);
+      background: rgba(125,255,139,.10);
+    }
+    .feedback.bad{
+      outline-color: rgba(255,107,107,.35);
+      background: rgba(255,107,107,.10);
+    }
+    .feedback.warn{
+      outline-color: rgba(255,211,107,.35);
+      background: rgba(255,211,107,.10);
+    }
+    .feedback .line1{
+      font-weight:900;
+      margin-bottom:4px;
+    }
+    .feedback .line2{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.25;
+    }
+
+    .solution{
+      display:none;
+      margin-top:8px;
+      border-radius: 18px;
+      background: rgba(139,255,204,.08);
+      outline: 1px solid rgba(139,255,204,.25);
+      padding:12px;
+    }
+    .solution.show{ display:block; }
+    .solution h4{
+      margin:0 0 6px;
+      font-size:13px;
+      letter-spacing:.2px;
+    }
+    .solution p{
+      margin:0;
+      color: var(--text);
+      font-size:13px;
+      line-height:1.35;
+    }
+
+    .navrow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+      margin-top:10px;
+    }
+
+    .kbd{
+      font-family: var(--mono);
+      font-size:12px;
+      color: var(--muted);
+      background: rgba(0,0,0,.22);
+      outline: 1px solid rgba(255,255,255,.12);
+      padding:6px 10px;
+      border-radius: 999px;
+      white-space:nowrap;
+    }
+
+    .side{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .statlist{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    @media (max-width: 420px){
+      .statlist{ grid-template-columns: 1fr; }
+    }
+
+    .stat{
+      border-radius: 18px;
+      background: rgba(255,255,255,.05);
+      outline: 1px solid rgba(255,255,255,.12);
+      padding:12px;
+    }
+    .stat .k{ color:var(--muted); font-size:12px; }
+    .stat .v{ font-size:18px; font-weight:900; margin-top:4px; }
+
+    .exportnote{
+      color: var(--muted);
+      font-size:12px;
+      line-height:1.35;
+    }
+
+    .footer{
+      padding:0 16px 28px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .divider{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin:10px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>Vorgeschichte zum Zweiten Weltkrieg – Überblick mit Karten (30 Fragen)</h1>
+        <p>
+          Fokus: <b>Karten-/Raumlogik</b> (Europa/Asien), Bündnisse, Eskalationsschritte 1919–1939.
+          Sofortkorrektur mit Synonymerkennung: <b>1× falsch</b> → Meldung, <b>2× falsch</b> → Hinweis, <b>3× falsch</b> → Musterlösung + automatisch weiter (wie bei richtig).
+        </p>
+      </div>
+      <div class="top-actions">
+        <button class="btn secondary" id="btnJumpOverview" title="Zur Kartenübersicht springen">🗺️ Kartenüberblick</button>
+        <button class="btn ok" id="btnExport" title="Export mit Antworten & Musterlösungen">⬇️ Export</button>
+        <button class="btn danger" id="btnReset" title="Alles zurücksetzen">↺ Reset</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- LEFT: maps + quiz -->
+      <section class="card" id="leftCard">
+        <div class="inner">
+          <div class="section-title">
+            <h2 id="overviewAnchor">Kartenüberblick & Quellen-Videos (externe Links)</h2>
+            <div class="hint">Tipp: Erst Karten lesen, dann Quiz.</div>
+          </div>
+
+          <div class="videos" aria-label="Quellenvideos">
+            <div class="vlink">
+              <strong>1) Hitlers Außenpolitik – einfach erklärt (Zusammenfassung)</strong>
+              <span>Kontext: Revision Versailles, Bündnisse, Eskalation bis 1939.</span>
+              <a target="_blank" rel="noopener" href="https://www.dropbox.com/scl/fi/knuiodyfpkrss99rs0k3e/Hitlers-Au-enpolitik-einfach-erkl-rt-Nationalsozialismus-Zusammenfassung.mp4?rlkey=75slz5hma2kl0y8ancz4fy7zg&st=w334ws6i&dl=0">▶ Öffnen</a>
+            </div>
+            <div class="vlink">
+              <strong>2) 10 Fakten, die man über den Zweiten Weltkrieg wissen muss (MrWissen2go)</strong>
+              <span>Kontext: Angriffskrieg, Ideologie, Eskalation, Weltkrieg.</span>
+              <a target="_blank" rel="noopener" href="https://www.dropbox.com/scl/fi/utcowt6swwv4vepw303s7/10-Fakten-die-man-ber-den-Zweiten-Weltkrieg-wissen-muss-MrWissen2go-Terra-X.mp4?rlkey=qg8pftppfi3w1nw5rl8gpaojb&st=yp92bxac&dl=0">▶ Öffnen</a>
+            </div>
+            <div class="vlink">
+              <strong>3) Der Zweite Weltkrieg – Zusammenfassung auf einer Karte</strong>
+              <span>Kontext: Chronologie räumlich begreifen (Fronten/Schauplätze).</span>
+              <a target="_blank" rel="noopener" href="https://www.dropbox.com/scl/fi/4b9l38h5p2sjn7fxtdp/Der-Zweite-Weltkrieg-Zusammenfassung-auf-einer-Karte.mp4?rlkey=d2btsj1rxm17milgcm5tpbtbl&st=lv51n1ou&dl=0">▶ Öffnen</a>
+            </div>
+            <div class="vlink">
+              <strong>4) Der gesamte Zweite Weltkrieg aus deutscher Sicht (Doku, Farbe)</strong>
+              <span>Kontext: Ereignisfolge + Perspektiven (Einordnung im Unterricht!).</span>
+              <a target="_blank" rel="noopener" href="https://www.dropbox.com/scl/fi/u2c05txj2xf1bnnxpnxc7/Der-Gesamte-Zweite-Weltkrieg-Aus-Deutscher-Sicht-Dokumentation-in-REINER-FARBE.mp4?rlkey=eb3vw9b507w52ndxdkp91prih&st=9vxqy4ue&dl=0">▶ Öffnen</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="mapwrap" style="margin-top:12px;">
+            <!-- MAP 1 -->
+            <div class="mapbox" id="map1">
+              <header>
+                <h3>Karte A – Europa nach 1919: Spannungen als „Startbedingungen“</h3>
+                <p>Versailles/Neuordnungen, Polen als Puffer, schwacher Völkerbund, isolierte/ausgeschlossene Mächte.</p>
+              </header>
+              <svg viewBox="0 0 860 360" role="img" aria-label="Vereinfachte Europa-Karte 1919–1923">
+                <defs>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="2.5" result="b"/>
+                    <feMerge>
+                      <feMergeNode in="b"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                <!-- ocean -->
+                <rect x="0" y="0" width="860" height="360" fill="rgba(0,0,0,.10)"/>
+                <!-- landmass blob (stylized) -->
+                <path d="M110,290 C80,250 80,180 120,140 C140,110 180,90 240,80
+                         C280,70 340,55 390,65 C430,75 460,65 510,70
+                         C560,75 600,90 630,120 C660,150 690,150 720,165
+                         C760,185 790,220 770,255 C750,285 715,300 680,305
+                         C630,312 610,330 560,330 C500,330 470,318 430,305
+                         C380,290 330,300 290,308 C240,318 170,320 110,290 Z"
+                      fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)" stroke-width="2"/>
+
+                <!-- markers -->
+                <circle cx="350" cy="185" r="8" fill="rgba(122,167,255,.9)" filter="url(#glow)"/>
+                <text x="365" y="189" fill="rgba(233,238,252,.95)" font-size="13" font-weight="800">Deutschland (Revision)</text>
+
+                <circle cx="415" cy="175" r="7" fill="rgba(255,211,107,.9)" filter="url(#glow)"/>
+                <text x="428" y="179" fill="rgba(233,238,252,.92)" font-size="12" font-weight="800">Polen (Korridor/Puffer)</text>
+
+                <circle cx="250" cy="175" r="7" fill="rgba(139,255,204,.9)" filter="url(#glow)"/>
+                <text x="263" y="179" fill="rgba(233,238,252,.92)" font-size="12" font-weight="800">Frankreich (Sicherheitsinteresse)</text>
+
+                <circle cx="195" cy="140" r="7" fill="rgba(255,255,255,.55)"/>
+                <text x="208" y="144" fill="rgba(233,238,252,.78)" font-size="12" font-weight="700">UK (Imperium/Balance)</text>
+
+                <circle cx="610" cy="160" r="7" fill="rgba(255,107,107,.9)" filter="url(#glow)"/>
+                <text x="623" y="164" fill="rgba(233,238,252,.92)" font-size="12" font-weight="800">UdSSR (isoliert/ausgeschlossen)</text>
+
+                <!-- arrows / tensions -->
+                <path d="M360,190 C390,205 400,215 420,230" stroke="rgba(255,211,107,.7)" stroke-width="3" fill="none"/>
+                <polygon points="420,230 412,228 416,222" fill="rgba(255,211,107,.75)"/>
+                <text x="430" y="246" fill="rgba(255,211,107,.92)" font-size="11" font-weight="800">Territoriale Konfliktlinie</text>
+
+                <path d="M320,210 C300,235 280,250 250,262" stroke="rgba(139,255,204,.6)" stroke-width="3" fill="none"/>
+                <polygon points="250,262 256,256 259,263" fill="rgba(139,255,204,.75)"/>
+                <text x="210" y="284" fill="rgba(139,255,204,.92)" font-size="11" font-weight="800">Sicherheits-/Reparationsdruck</text>
+
+                <!-- label: Völkerbund -->
+                <rect x="20" y="18" rx="12" ry="12" width="300" height="62" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.10)"/>
+                <text x="36" y="42" fill="rgba(233,238,252,.95)" font-size="13" font-weight="900">Völkerbund – strukturelle Schwäche</text>
+                <text x="36" y="62" fill="rgba(169,182,214,.95)" font-size="12">USA nicht dabei · UdSSR ausgeschlossen · Sanktionen oft zahnlos</text>
+              </svg>
+              <div class="legend">
+                <span class="pill"><span class="dot" style="background:rgba(122,167,255,.9)"></span>Revision/Expansion</span>
+                <span class="pill"><span class="dot" style="background:rgba(255,211,107,.9)"></span>„Puffer“-Räume/Hotspots</span>
+                <span class="pill"><span class="dot" style="background:rgba(139,255,204,.9)"></span>Sicherheitsinteresse Westmächte</span>
+                <span class="pill"><span class="dot" style="background:rgba(255,107,107,.9)"></span>Isolation/Blocklogik</span>
+              </div>
+            </div>
+
+            <!-- MAP 2 -->
+            <div class="mapbox" id="map2">
+              <header>
+                <h3>Karte B – 1931–1939: Eskalationskette in Europa (Schritte zur „Kriegslage“)</h3>
+                <p>Anschluss, Sudetenland/München, Rest-Tschechoslowakei, Ultimatum an Polen, Nichtangriffspakt (inkl. geheimes Protokoll).</p>
+              </header>
+              <svg viewBox="0 0 860 360" role="img" aria-label="Vereinfachte Europa-Karte 1931–1939 Eskalationskette">
+                <rect x="0" y="0" width="860" height="360" fill="rgba(0,0,0,.10)"/>
+                <path d="M110,290 C80,250 80,180 120,140 C140,110 180,90 240,80
+                         C280,70 340,55 390,65 C430,75 460,65 510,70
+                         C560,75 600,90 630,120 C660,150 690,150 720,165
+                         C760,185 790,220 770,255 C750,285 715,300 680,305
+                         C630,312 610,330 560,330 C500,330 470,318 430,305
+                         C380,290 330,300 290,308 C240,318 170,320 110,290 Z"
+                      fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)" stroke-width="2"/>
+
+                <!-- Germany center -->
+                <circle cx="350" cy="185" r="10" fill="rgba(122,167,255,.95)"/>
+                <text x="366" y="190" fill="rgba(233,238,252,.95)" font-size="13" font-weight="900">DE</text>
+
+                <!-- Austria -->
+                <circle cx="390" cy="205" r="7" fill="rgba(122,167,255,.75)"/>
+                <text x="404" y="209" fill="rgba(233,238,252,.9)" font-size="12" font-weight="800">Anschluss (1938)</text>
+
+                <!-- Sudetenland / CZE -->
+                <circle cx="420" cy="195" r="7" fill="rgba(255,211,107,.9)"/>
+                <text x="434" y="199" fill="rgba(233,238,252,.9)" font-size="12" font-weight="800">Sudetenland (1938)</text>
+                <circle cx="440" cy="215" r="6" fill="rgba(255,211,107,.75)"/>
+                <text x="454" y="219" fill="rgba(233,238,252,.85)" font-size="12" font-weight="800">Rest-Tschechoslowakei (1939)</text>
+
+                <!-- Poland -->
+                <circle cx="450" cy="175" r="8" fill="rgba(255,107,107,.9)"/>
+                <text x="465" y="179" fill="rgba(233,238,252,.92)" font-size="12" font-weight="900">Polen (Korridor/Ultimatum)</text>
+
+                <!-- USSR -->
+                <circle cx="610" cy="160" r="8" fill="rgba(255,107,107,.65)"/>
+                <text x="625" y="164" fill="rgba(233,238,252,.85)" font-size="12" font-weight="800">UdSSR (Pakt 1939)</text>
+
+                <!-- Italy -->
+                <circle cx="290" cy="240" r="7" fill="rgba(255,211,107,.75)"/>
+                <text x="304" y="244" fill="rgba(233,238,252,.85)" font-size="12" font-weight="800">IT (Expansion/Annäherung)</text>
+
+                <!-- arrows -->
+                <path d="M355,185 C372,198 380,203 390,205" stroke="rgba(122,167,255,.70)" stroke-width="3" fill="none"/>
+                <polygon points="390,205 382,206 386,198" fill="rgba(122,167,255,.75)"/>
+
+                <path d="M360,180 C390,175 405,180 420,195" stroke="rgba(255,211,107,.75)" stroke-width="3" fill="none"/>
+                <polygon points="420,195 412,194 417,187" fill="rgba(255,211,107,.8)"/>
+
+                <path d="M428,192 C440,188 445,183 450,175" stroke="rgba(255,107,107,.75)" stroke-width="3" fill="none"/>
+                <polygon points="450,175 447,183 442,178" fill="rgba(255,107,107,.8)"/>
+
+                <path d="M455,175 C505,160 560,150 610,160" stroke="rgba(255,107,107,.55)" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
+                <text x="500" y="142" fill="rgba(255,107,107,.92)" font-size="11" font-weight="900">Nichtangriffspakt + geheimes Protokoll</text>
+
+                <!-- label: Appeasement -->
+                <rect x="20" y="18" rx="12" ry="12" width="360" height="62" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.10)"/>
+                <text x="36" y="42" fill="rgba(233,238,252,.95)" font-size="13" font-weight="900">Beschwichtigung/„Appeasement“</text>
+                <text x="36" y="62" fill="rgba(169,182,214,.95)" font-size="12">Ziel: Krieg vermeiden – Wirkung: Aggressor testet Grenzen immer weiter</text>
+              </svg>
+              <div class="legend">
+                <span class="pill"><span class="dot" style="background:rgba(122,167,255,.9)"></span>Schritte der Expansion (DE)</span>
+                <span class="pill"><span class="dot" style="background:rgba(255,211,107,.9)"></span>Territoriale „Scheiben“</span>
+                <span class="pill"><span class="dot" style="background:rgba(255,107,107,.9)"></span>Konflikt-/Paktachsen</span>
+              </div>
+            </div>
+
+            <!-- MAP 3 -->
+            <div class="mapbox" id="map3">
+              <header>
+                <h3>Karte C – Globaler Rahmen: Europa & Asien (Japan/China/USA) als „Weltkriegsvoraussetzung“</h3>
+                <p>Japanische Expansion (Mandschurei/China), Rohstofflogik, Konflikt mit USA – Weltkrieg wird möglich.</p>
+              </header>
+              <svg viewBox="0 0 860 360" role="img" aria-label="Vereinfachte Weltkarte Europa-Asien-USA">
+                <rect x="0" y="0" width="860" height="360" fill="rgba(0,0,0,.10)"/>
+
+                <!-- stylized continents -->
+                <path d="M85,210 C65,170 90,130 130,120 C180,108 230,120 260,145
+                         C290,165 315,170 345,160 C375,150 410,150 435,165
+                         C465,180 485,190 490,210 C495,235 465,250 430,252
+                         C390,254 375,270 340,280 C300,292 250,298 205,290
+                         C150,280 105,260 85,210 Z"
+                      fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)" stroke-width="2"/>
+                <text x="120" y="155" fill="rgba(233,238,252,.85)" font-size="12" font-weight="900">Europa/Nordafrika</text>
+
+                <path d="M420,105 C470,75 530,65 585,80 C630,92 670,120 710,140
+                         C740,155 780,180 770,210 C760,240 725,240 700,250
+                         C670,263 655,290 620,300 C560,315 520,300 500,270
+                         C480,245 470,225 450,200 C430,175 400,135 420,105 Z"
+                      fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)" stroke-width="2"/>
+                <text x="530" y="135" fill="rgba(233,238,252,.85)" font-size="12" font-weight="900">Asien</text>
+
+                <!-- Japan marker -->
+                <circle cx="740" cy="175" r="8" fill="rgba(255,211,107,.9)"/>
+                <text x="754" y="180" fill="rgba(233,238,252,.92)" font-size="12" font-weight="900">Japan (Expansion)</text>
+
+                <!-- China marker -->
+                <circle cx="670" cy="190" r="7" fill="rgba(255,107,107,.85)"/>
+                <text x="684" y="195" fill="rgba(233,238,252,.88)" font-size="12" font-weight="900">China (Krieg/Instabilität)</text>
+
+                <!-- USA marker (off map to left) -->
+                <circle cx="40" cy="140" r="8" fill="rgba(122,167,255,.9)"/>
+                <text x="54" y="145" fill="rgba(233,238,252,.92)" font-size="12" font-weight="900">USA (Rohstoff-/Sanktionsmacht)</text>
+
+                <!-- arrows: Japan -> SE Asia, Japan -> USA -->
+                <path d="M740,175 C730,210 705,230 670,255" stroke="rgba(255,211,107,.70)" stroke-width="3" fill="none"/>
+                <polygon points="670,255 676,248 679,255" fill="rgba(255,211,107,.8)"/>
+                <text x="640" y="278" fill="rgba(255,211,107,.92)" font-size="11" font-weight="900">Rohstoffräume (Südostasien)</text>
+
+                <path d="M730,170 C610,120 380,110 70,140" stroke="rgba(122,167,255,.50)" stroke-width="3" fill="none" stroke-dasharray="7 6"/>
+                <text x="360" y="98" fill="rgba(122,167,255,.92)" font-size="11" font-weight="900">Konfliktlinie USA–Japan</text>
+
+                <!-- label: Achsenmächte -->
+                <rect x="20" y="18" rx="12" ry="12" width="380" height="62" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.10)"/>
+                <text x="36" y="42" fill="rgba(233,238,252,.95)" font-size="13" font-weight="900">Bündnisse & „Koppeln“ von Konflikten</text>
+                <text x="36" y="62" fill="rgba(169,182,214,.95)" font-size="12">Europa-Konflikt + Asien-Pazifik-Konflikt → Weltkrieg möglich</text>
+              </svg>
+              <div class="legend">
+                <span class="pill"><span class="dot" style="background:rgba(255,211,107,.9)"></span>Japanische Expansion/Rohstoffe</span>
+                <span class="pill"><span class="dot" style="background:rgba(255,107,107,.9)"></span>Kriegsschauplatz/Instabilität</span>
+                <span class="pill"><span class="dot" style="background:rgba(122,167,255,.9)"></span>US-Einfluss/Sanktionen</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-title" style="margin-top:12px;">
+            <h2>Quiz (30 Fragen) – Sofortkorrektur + Synonymerkennung</h2>
+            <div class="hint"><span class="kbd">Enter</span> = prüfen · <span class="kbd">1–4</span> = MC wählen</div>
+          </div>
+
+          <div class="quiz" id="quiz">
+            <div class="progress">
+              <div class="meta">
+                <div id="metaLeft">Frage 1 von 30</div>
+                <div id="metaRight">Richtig: 0 · Falsch: 0</div>
+              </div>
+              <div class="bar" aria-label="Fortschritt">
+                <div class="fill" id="fill"></div>
+              </div>
+            </div>
+
+            <div class="qcard" id="qcard" aria-live="polite">
+              <div class="qhead">
+                <div class="qnum" id="qnum">Frage 1</div>
+                <div class="qtopic" id="qtopic">Thema</div>
+              </div>
+              <p class="qtext" id="qtext">Fragetext</p>
+
+              <div class="answer-area" id="answerArea">
+                <div class="choices" id="choices" style="display:none;"></div>
+
+                <div class="inputrow" id="inputRow">
+                  <input type="text" id="answerInput" placeholder="Antwort eingeben … (bei MC kannst du auch A/B/C/D schreiben)" autocomplete="off" />
+                  <button class="btn ok" id="btnCheck">✅ Abschicken</button>
+                  <button class="btn secondary" id="btnSkip" title="Weiter (nur wenn Lösung angezeigt oder richtig)">➡️ Weiter</button>
+                </div>
+
+                <div class="feedback" id="feedback">
+                  <div class="line1" id="fbLine1"></div>
+                  <div class="line2" id="fbLine2"></div>
+                </div>
+
+                <div class="solution" id="solution">
+                  <h4>Musterlösung</h4>
+                  <p id="solText"></p>
+                </div>
+
+                <div class="small" id="microHelp">
+                  Hinweis: Synonyme werden akzeptiert (z. B. „Beschwichtigungspolitik“ = „Appeasement“).
+                  Bei Freitext zählt auch sinnäquivalente Formulierung, wenn die Kernbegriffe stimmen.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- RIGHT: stats + export info -->
+      <aside class="side">
+        <section class="card">
+          <div class="inner">
+            <div class="section-title">
+              <h2>Status</h2>
+              <div class="hint">live</div>
+            </div>
+            <div class="statlist">
+              <div class="stat">
+                <div class="k">Fortschritt</div>
+                <div class="v" id="statProgress">0%</div>
+              </div>
+              <div class="stat">
+                <div class="k">Richtig</div>
+                <div class="v" id="statCorrect">0</div>
+              </div>
+              <div class="stat">
+                <div class="k">Falsch (Gesamt)</div>
+                <div class="v" id="statWrong">0</div>
+              </div>
+              <div class="stat">
+                <div class="k">Export bereit</div>
+                <div class="v" id="statExport">Ja</div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <p class="exportnote">
+              <b>Export</b> enthält: alle Fragen, deine Antworten, Bewertung, Hinweise (falls erschienen) und <b>alle Musterlösungen</b>.
+              Exportoptionen: <b>HTML-Datei</b> (download) und <b>Druckansicht</b> (als PDF speichern).
+            </p>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="inner">
+            <div class="section-title">
+              <h2>Kurzanleitung</h2>
+              <div class="hint">für SuS</div>
+            </div>
+            <ul class="small" style="margin:0; padding-left:18px;">
+              <li>Arbeite Karte A → B → C.</li>
+              <li>Im Quiz: 1. Versuch frei; 2. Versuch mit Hinweis; 3. Versuch: Musterlösung + automatisch weiter.</li>
+              <li>Bei MC: klicke Option oder tippe A/B/C/D.</li>
+              <li>Wenn du exportierst: am besten am Schluss (oder zwischendurch als Lernprotokoll).</li>
+            </ul>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <div class="footer">
+      <b>Didaktischer Fokus:</b> räumliche Logik („wo liegt was?“), Eskalationslogik („welcher Schritt ermöglicht den nächsten?“),
+      Bündnislogik („wer koppelt welche Konflikte?“).<br/>
+      <span style="color:rgba(233,238,252,.85)"><b>Hinweis zur Perspektive:</b></span> Videos/Dokus können Perspektiven setzen. Im Unterricht immer einordnen (Begriffe, Quellen, Intent).
+    </div>
+  </div>
+
+  <script>
+    /***********************
+     *  ARBEITSMODUS-LOGIK:
+     *  - komplette Datei
+     *  - keine Platzhalter
+     *  - sofortkorrektur
+     *  - 1 falsch / 2 hint / 3 solution + weiter
+     *  - synonymerkennung
+     *  - reset + export (inkl. musterlösungen)
+     ***********************/
+
+    // ---------- Utilities: normalize + light synonym tolerance ----------
+    function norm(str){
+      return (str ?? "")
+        .toString()
+        .trim()
+        .toLowerCase()
+        .replaceAll("ä","ae").replaceAll("ö","oe").replaceAll("ü","ue").replaceAll("ß","ss")
+        .replace(/[\u2019\u2018\u201A\u201B\u2032\u2035']/g, "") // quotes/apostrophes
+        .replace(/[.,;:!?()\\[\]{}"“”„…]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+    function includesAll(hay, needles){
+      const h = norm(hay);
+      return needles.every(n => h.includes(norm(n)));
+    }
+    function equalsAny(ans, list){
+      const a = norm(ans);
+      return list.some(x => norm(x) === a);
+    }
+    function sanitizeLetter(ans){
+      const a = norm(ans).toUpperCase();
+      if(!a) return "";
+      const first = a[0];
+      if(["A","B","C","D"].includes(first)) return first;
+      return "";
+    }
+
+    // ---------- Question set (30) ----------
+    // Types:
+    // - type: "mc" -> options: [{k:"A", t:"..."}, ...], correct: "A"
+    // - type: "text" -> acceptAny: [...], acceptContainsAll: [ [..], [..] ] (optional)
+    // Each has: topic, q, hint, solution, sourceTags
+    const QUESTIONS = [
+      {
+        id:1,
+        topic:"Startbedingungen 1919",
+        type:"mc",
+        q:"Was war eine zentrale Folge des Versailler Vertrags für Deutschland (laut Überblick)?",
+        options:[
+          {k:"A", t:"Deutschland erhält zusätzliche Kolonien als Ausgleich."},
+          {k:"B", t:"Deutschland verliert Kolonien und Gebiete; Armee wird stark begrenzt; Reparationspflicht."},
+          {k:"C", t:"Deutschland wird sofort in den Völkerbund aufgenommen."},
+          {k:"D", t:"Deutschland darf eine große Luftwaffe behalten."}
+        ],
+        correct:"B",
+        hint:"Achte auf: Gebietsverluste, Kolonien, Armee auf 100.000, Reparationen, Kriegsschuld.",
+        solution:"Versailles: Verlust von Kolonien und Gebieten (u.a. zugunsten Polens), starke Begrenzung der Armee (100.000, keine schweren Waffen/Luftwaffe) und Reparationspflicht/Schuldzuweisung."
+      },
+      {
+        id:2,
+        topic:"Völkerbund & internationale Ordnung",
+        type:"text",
+        q:"Warum war der Völkerbund strukturell geschwächt (nenne zwei Gründe)?",
+        acceptContainsAll:[
+          ["usa", "nicht"], // USA nicht dabei
+          ["udssr", "ausgeschlossen"], // UdSSR ausgeschlossen
+          ["usa", "völkerbund"], // alternative
+          ["russland", "ausgeschlossen"]
+        ],
+        acceptAny:[
+          "USA tritt nicht bei und UdSSR ist ausgeschlossen",
+          "USA nicht Mitglied, UdSSR ausgeschlossen",
+          "USA nicht dabei; UdSSR ausgeschlossen"
+        ],
+        hint:"Suche 2 Punkte: USA (Senat ratifiziert nicht) + UdSSR (ausgeschlossen/isoliert).",
+        solution:"Der Völkerbund war geschwächt, weil die USA nicht beitraten (Senat ratifizierte nicht) und die UdSSR nach Revolution/Bürgerkrieg ausgeschlossen bzw. isoliert war; dadurch fehlten entscheidende Großmächte und Durchsetzungskraft."
+      },
+      {
+        id:3,
+        topic:"Wirtschaftskrisen als Radikalisierungstreiber",
+        type:"text",
+        q:"Welche deutsche Krise erreichte 1923 einen Höhepunkt und radikalisierte/erschütterte das Land?",
+        acceptAny:["hyperinflation", "geldentwertung", "inflationskrise", "währungszerfall"],
+        acceptContainsAll:[["hyper", "inflation"]],
+        hint:"Es geht um extremen Wertverlust des Geldes (Billionenbeträge).",
+        solution:"Die Hyperinflation 1923 (extreme Geldentwertung) erschütterte die Wirtschaft und das Vertrauen in Politik und Gesellschaft."
+      },
+      {
+        id:4,
+        topic:"Ruhrbesetzung",
+        type:"mc",
+        q:"Warum besetzten Frankreich und Belgien das Ruhrgebiet?",
+        options:[
+          {k:"A", t:"Um Deutschland für den Eintritt in den Völkerbund zu belohnen."},
+          {k:"B", t:"Weil Deutschland Reparationszahlungen aussetzte/stockte; Ruhr war industrielle Schlüsselregion."},
+          {k:"C", t:"Um Deutschland beim Wiederaufbau nach Naturkatastrophen zu helfen."},
+          {k:"D", t:"Weil Deutschland dort ein Referendum über Kolonien durchführen wollte."}
+        ],
+        correct:"B",
+        hint:"Reparationen + Druckmittel in einer reichen Industrieregion.",
+        solution:"Frankreich und Belgien besetzten das Ruhrgebiet als Reaktion auf ausbleibende/gestoppte Reparationszahlungen; das Ruhrgebiet war eine zentrale Industrieregion."
+      },
+      {
+        id:5,
+        topic:"USA als Weltwirtschaftsfaktor",
+        type:"text",
+        q:"Wie wurden die USA in den 1920er Jahren (laut Überblick) zum „Rückgrat“ der Weltwirtschaft (Stichwort: Kredite/Schuldenkreislauf)?",
+        acceptContainsAll:[
+          ["kredit", "deutschland"],
+          ["deutschland", "reparation"],
+          ["kredit", "reparation"]
+        ],
+        acceptAny:[
+          "USA geben Deutschland Kredite, damit es Reparationen zahlen kann",
+          "USA finanzieren Deutschland; Reparationen fließen an Sieger zurück",
+          "Kredite an Deutschland ermöglichen Reparationszahlungen"
+        ],
+        hint:"Denke an einen Kreislauf: USA → Deutschland → Sieger → USA.",
+        solution:"Die USA gaben Kredite an Deutschland, damit die Wirtschaft stabilisiert wird und Deutschland Reparationen zahlen kann; die Sieger konnten damit wiederum ihre Kriegsschulden/Verpflichtungen bedienen (Kreislauf)."
+      },
+      {
+        id:6,
+        topic:"Weltwirtschaftskrise 1929",
+        type:"mc",
+        q:"Was löste laut Überblick eine globale Wirtschaftskrise aus, die Deutschland besonders hart traf?",
+        options:[
+          {k:"A", t:"Ein Erdbeben in Kalifornien."},
+          {k:"B", t:"Der Wall-Street-Crash in New York (1929)."},
+          {k:"C", t:"Die Eröffnung des Suezkanals."},
+          {k:"D", t:"Ein Handelsabkommen zwischen Deutschland und Japan."}
+        ],
+        correct:"B",
+        hint:"New York, Börse, 1929.",
+        solution:"Der Wall-Street-Crash 1929 löste die schwerste globale Wirtschaftskrise des 20. Jahrhunderts aus; Deutschland wurde besonders hart getroffen."
+      },
+      {
+        id:7,
+        topic:"Machtergreifung & Diktatur",
+        type:"text",
+        q:"Welche Partei profitierte 1932 stark von Krise/Extremismus – und wie heißt sie ausgeschrieben?",
+        acceptContainsAll:[
+          ["nsdap"],
+        ],
+        acceptAny:[
+          "NSDAP",
+          "Nationalsozialistische Deutsche Arbeiterpartei",
+          "Nationalsozialistische deutsche arbeiterpartei"
+        ],
+        hint:"Abkürzung mit 5 Buchstaben; ausgeschrieben: Nationalsozialistische …",
+        solution:"Die NSDAP – ausgeschrieben: Nationalsozialistische Deutsche Arbeiterpartei."
+      },
+      {
+        id:8,
+        topic:"Hitlers Ziele (Ideologie)",
+        type:"text",
+        q:"Nenne zwei zentrale Ziele Hitlers, die im Material betont werden (Stichworte genügen).",
+        acceptContainsAll:[
+          ["lebensraum", "osten"],
+          ["kommunismus", "bekaempfen"],
+          ["juden", "vernichten"],
+          ["versaille", "aufheben"],
+          ["vertrag", "versaille"]
+        ],
+        acceptAny:[
+          "Lebensraum im Osten und Kampf gegen Kommunismus",
+          "Lebensraum im Osten + Antikommunismus",
+          "Versailles revidieren und Lebensraum im Osten",
+          "Juden vernichten und Lebensraum im Osten"
+        ],
+        hint:"Mögliche Bausteine: Lebensraum im Osten, Antikommunismus, Antisemitismus, Versailles annullieren.",
+        solution:"Zentrale Ziele: „Lebensraum“ im Osten erobern; Kommunismus bekämpfen (UdSSR als Hauptgegner); antisemitische Vernichtungspolitik; Revision/Annullierung von Versailles."
+      },
+      {
+        id:9,
+        topic:"Völkerbund-Austritt & Aufrüstung",
+        type:"mc",
+        q:"Welche Kombination passt (laut Überblick): Deutschland …",
+        options:[
+          {k:"A", t:"tritt aus dem Völkerbund aus, stoppt Reparationszahlungen und führt Wehrpflicht wieder ein."},
+          {k:"B", t:"tritt dem Völkerbund bei, zahlt freiwillig mehr Reparationen und reduziert die Armee."},
+          {k:"C", t:"löst die Wehrmacht auf und übergibt alle Waffen an Frankreich."},
+          {k:"D", t:"tritt der UdSSR bei und gibt Kolonien an Japan ab."}
+        ],
+        correct:"A",
+        hint:"Drei Punkte: Völkerbund-Austritt + Reparationen/„Kriegs…zahlungen“ stoppen + Wehrpflicht.",
+        solution:"Deutschland trat aus dem Völkerbund aus, stoppte Reparationszahlungen und führte die Wehrpflicht wieder ein – Schritte zur Revision und Aufrüstung."
+      },
+      {
+        id:10,
+        topic:"Italienische Expansion (Abyssinien)",
+        type:"text",
+        q:"Welches unabhängige Land griff Italien 1935 an (Kolonialexpansion), obwohl es Mitglied des Völkerbundes war?",
+        acceptAny:["abessinien", "aethiopien", "äthiopien", "ethiopien"],
+        acceptContainsAll:[["aethiop"], ["abessin"]],
+        hint:"Heutiger Name: Äthiopien.",
+        solution:"Italien griff Abessinien (Äthiopien) 1935 an – ein unabhängiges Land und Mitglied des Völkerbundes."
+      },
+      {
+        id:11,
+        topic:"Spanischer Bürgerkrieg & Achse",
+        type:"text",
+        q:"Wie heißt das Bündnis/Annäherungssignal zwischen Italien und Deutschland im Kontext Spanien (Formulierung im Überblick)?",
+        acceptAny:["achse rom berlin", "rom-berlin-achse", "achse rom-berlin", "achse rom berlin"],
+        acceptContainsAll:[["achse", "rom"], ["rom", "berlin"]],
+        hint:"Zwei Städte: Rom + Berlin.",
+        solution:"Die „Achse Rom–Berlin“ (Annäherung/Bündnis zwischen Italien und Deutschland)."
+      },
+      {
+        id:12,
+        topic:"Japanische Expansion",
+        type:"mc",
+        q:"Welches Gebiet/Region nahm Japan 1931 ins Visier (im Überblick genannt)?",
+        options:[
+          {k:"A", t:"Andalusien"},
+          {k:"B", t:"Mandschurei"},
+          {k:"C", t:"Elsass-Lothringen"},
+          {k:"D", t:"Island"}
+        ],
+        correct:"B",
+        hint:"Nordost-China: Mandschurei.",
+        solution:"Japan fiel 1931 in die Mandschurei ein (Nordost-China)."
+      },
+      {
+        id:13,
+        topic:"Anschluss Österreich",
+        type:"text",
+        q:"Wie heißt der Schritt, bei dem Österreich offiziell an Deutschland angeschlossen wurde (ein Wort/Begriff)?",
+        acceptAny:["anschluss", "anschluss oesterreichs", "anschluss österreichs"],
+        acceptContainsAll:[["anschluss"]],
+        hint:"Der historische Begriff beginnt mit „An…“",
+        solution:"Der „Anschluss“ Österreichs an Deutschland (1938)."
+      },
+      {
+        id:14,
+        topic:"Sudetenland & München",
+        type:"mc",
+        q:"Was machten Frankreich und Großbritannien beim Sudetenland-Konflikt (laut Überblick), um Krieg zu verhindern?",
+        options:[
+          {k:"A", t:"Sie unterstützten die Tschechoslowakei militärisch und griffen sofort an."},
+          {k:"B", t:"Sie genehmigten faktisch die Invasion/Abtretung des Territoriums (Beschwichtigung)."},
+          {k:"C", t:"Sie traten aus dem Völkerbund aus."},
+          {k:"D", t:"Sie übergaben Sudetenland an Polen."}
+        ],
+        correct:"B",
+        hint:"Beschwichtigung: „Verraten ihren Verbündeten“ – Zustimmung zur Abtretung.",
+        solution:"Frankreich und Großbritannien stimmten der Abtretung/Übernahme des Sudetenlands zu, um einen Krieg zu verhindern (Appeasement)."
+      },
+      {
+        id:15,
+        topic:"Vertragsbruch 1939 (Rest-Tschechoslowakei)",
+        type:"text",
+        q:"Was tat Deutschland etwa 6 Monate nach der Sudetenland-Regelung (München), laut Überblick?",
+        acceptContainsAll:[
+          ["marsch", "gesamte"],
+          ["tschechoslow", "marsch"],
+          ["bruch", "abkommen"]
+        ],
+        acceptAny:[
+          "Deutschland brach das Abkommen und marschierte in die gesamte Tschechoslowakei ein",
+          "Besetzung der gesamten Tschechoslowakei",
+          "Einmarsch in die ganze Tschechoslowakei"
+        ],
+        hint:"Es geht um: Abkommen brechen + Einmarsch ins ganze Land.",
+        solution:"Deutschland brach das Abkommen und marschierte in die gesamte Tschechoslowakei ein; die Slowakei wurde Satellitenstaat."
+      },
+      {
+        id:16,
+        topic:"Polnischer Korridor",
+        type:"text",
+        q:"Auf welchen strategischen Raum richtete Hitler danach den Blick (Begriff im Überblick)?",
+        acceptAny:["polnischer korridor", "polenkorridor", "korridor", "danzig-korridor"],
+        acceptContainsAll:[["korridor"], ["poln"]],
+        hint:"Wort: „Korridor“ + Bezug zu Polen.",
+        solution:"Auf den „polnischen Korridor“ (strategischer Zugang/Trennlinie in der Region)."
+      },
+      {
+        id:17,
+        topic:"Garantieerklärung",
+        type:"mc",
+        q:"Was kündigten Frankreich und Großbritannien an, nachdem Polen ein Ultimatum ablehnte?",
+        options:[
+          {k:"A", t:"Sie würden Polen im Fall einer deutschen Invasion unterstützen."},
+          {k:"B", t:"Sie würden Deutschland sofort Kolonien zurückgeben."},
+          {k:"C", t:"Sie würden Japan den Krieg erklären."},
+          {k:"D", t:"Sie würden die Wehrpflicht in Frankreich abschaffen."}
+        ],
+        correct:"A",
+        hint:"Garantie: Unterstützung Polens bei Invasion.",
+        solution:"Frankreich und Großbritannien kündigten Unterstützung Polens im Fall einer deutschen Invasion an."
+      },
+      {
+        id:18,
+        topic:"Italien in Albanien",
+        type:"text",
+        q:"Welches Land marschierte Italien kurz vor Kriegsbeginn in Europa ein (im Überblick genannt)?",
+        acceptAny:["albanien"],
+        acceptContainsAll:[["alban"]],
+        hint:"Balkanstaat an der Adria.",
+        solution:"Italien marschierte in Albanien ein."
+      },
+      {
+        id:19,
+        topic:"Nichtangriffspakt 1939",
+        type:"text",
+        q:"Wie heißt der Pakt, den Deutschland 1939 mit der UdSSR schloss (Begriff: …-…-Pakt)?",
+        acceptAny:[
+          "hitler-stalin-pakt",
+          "hitler stalin pakt",
+          "molotow-ribbentrop-pakt",
+          "molotov-ribbentrop-pakt",
+          "molotow ribbentrop pakt",
+          "molotov ribbentrop pakt",
+          "deutsch sowjetischer nichtangriffspakt",
+          "deutsch-sowjetischer nichtangriffspakt"
+        ],
+        acceptContainsAll:[
+          ["nichtangriffspakt", "udssr"],
+          ["molotow", "ribbentrop"],
+          ["molotov", "ribbentrop"],
+          ["hitler", "stalin"]
+        ],
+        hint:"Synonyme: Hitler-Stalin-Pakt oder Molotow-Ribbentrop-Pakt.",
+        solution:"Der deutsch-sowjetische Nichtangriffspakt 1939 – auch Hitler-Stalin-Pakt bzw. Molotow-Ribbentrop-Pakt genannt (mit geheimem Zusatzprotokoll)."
+      },
+      {
+        id:20,
+        topic:"Geheimes Protokoll",
+        type:"mc",
+        q:"Was regelte das geheime Protokoll zum Nichtangriffspakt (im Überblick erwähnt)?",
+        options:[
+          {k:"A", t:"Eine gemeinsame demokratische Verfassung für Polen."},
+          {k:"B", t:"Die Abgrenzung von Einflusssphären in Polen und Osteuropa."},
+          {k:"C", t:"Die sofortige Abrüstung Deutschlands."},
+          {k:"D", t:"Ein Handelsabkommen für Tropenfrüchte."}
+        ],
+        correct:"B",
+        hint:"Einflussbereiche/„Sphären“ in Polen/Osteuropa.",
+        solution:"Das geheime Protokoll grenzte Einflusssphären in Polen und Osteuropa ab."
+      },
+      {
+        id:21,
+        topic:"1. September 1939",
+        type:"text",
+        q:"Welches Land wurde am 1. September 1939 von Deutschland überfallen (Auslöser des europäischen Kriegsausbruchs)?",
+        acceptAny:["polen"],
+        acceptContainsAll:[["polen"]],
+        hint:"Der Angriff auf Polen.",
+        solution:"Polen."
+      },
+      {
+        id:22,
+        topic:"„Krieg wird herbeigeführt“",
+        type:"text",
+        q:"Warum ist die Formulierung „Der Krieg bricht aus“ problematisch (Kernaussage aus dem Material)?",
+        acceptContainsAll:[
+          ["herbeigefuehrt"],
+          ["hitler"],
+          ["deutsches reich"]
+        ],
+        acceptAny:[
+          "Weil der Krieg bewusst herbeigeführt wurde (Hitler/Deutsches Reich)",
+          "Weil es ein bewusst geplanter Angriffskrieg war",
+          "Weil Hitler und das Deutsche Reich den Krieg aktiv herbeiführten"
+        ],
+        hint:"Nicht wie Naturereignis – sondern bewusste politische Entscheidung/Angriffskrieg.",
+        solution:"Weil der Krieg nicht „wie ein Vulkan“ passiert, sondern bewusst herbeigeführt/geplant wurde – insbesondere durch Hitler und das Deutsche Reich (Angriffskrieg)."
+      },
+      {
+        id:23,
+        topic:"„Lebensraum“ – Raumlogik",
+        type:"mc",
+        q:"Warum lag Polen in Hitlers „Lebensraum im Osten“-Logik strategisch im Weg (laut Material)?",
+        options:[
+          {k:"A", t:"Weil Polen eine Insel im Atlantik ist."},
+          {k:"B", t:"Weil Polen geografisch zwischen dem Deutschen Reich und der Sowjetunion liegt."},
+          {k:"C", t:"Weil Polen die deutsche Kolonialverwaltung kontrollierte."},
+          {k:"D", t:"Weil Polen das Ruhrgebiet blockierte."}
+        ],
+        correct:"B",
+        hint:"Geografie: Zwischen Deutschland und UdSSR.",
+        solution:"Weil Polen geografisch zwischen dem Deutschen Reich und der Sowjetunion lag – es war das „Durchgangs-/Barrierekorridor“-Gebiet für die Ostexpansion."
+      },
+      {
+        id:24,
+        topic:"Besatzungsterror in Polen",
+        type:"text",
+        q:"Was war ein Ziel der deutschen Terrorherrschaft in Polen 1939 (im Material genannt)?",
+        acceptContainsAll:[
+          ["fuehrungseliten", "ausloesch"],
+          ["widerstand", "brechen"],
+          ["eliten", "ausloesch"]
+        ],
+        acceptAny:[
+          "Die Führungseliten auslöschen und Widerstand brechen",
+          "Eliten eliminieren, Widerstand brechen",
+          "Führungsschicht ausschalten"
+        ],
+        hint:"Zwei Kernbegriffe: Eliten/Führung + Widerstand brechen.",
+        solution:"Ein zentrales Ziel war, die polnischen Führungseliten auszuschalten und jeden Widerstand durch Terror zu brechen."
+      },
+      {
+        id:25,
+        topic:"Rassistische Ideologie",
+        type:"text",
+        q:"Welche zwei Gegensätze nutzten die Nazis in ihrer völkischen Ideologie (Begriffe aus dem Material)?",
+        acceptContainsAll:[
+          ["herrenmenschen"],
+          ["untermenschen"]
+        ],
+        acceptAny:[
+          "Herrenmenschen und Untermenschen",
+          "Herrenmensch vs Untermensch"
+        ],
+        hint:"Zwei Wörter, die die Hierarchie ausdrücken.",
+        solution:"„Herrenmenschen“ vs. „Untermenschen“ (rassistisches Hierarchiedenken)."
+      },
+      {
+        id:26,
+        topic:"Antisemitische Politik – Vorformen",
+        type:"text",
+        q:"Welche Maßnahme gegen Juden in Polen 1939 wird im Material genannt (Stichwort genügt)?",
+        acceptAny:["ghettos", "ghetto", "ghettoisierung", "zusammenpferchen in ghettos", "juden ghettos"],
+        acceptContainsAll:[["ghetto"]],
+        hint:"Sie wurden in abgegrenzte Wohngebiete gepresst.",
+        solution:"Ghettoisierung: Juden wurden in Ghettos zusammengepfercht; zudem gab es frühe Morde/Verfolgungsmaßnahmen."
+      },
+      {
+        id:27,
+        topic:"Beschwichtigungspolitik (Appeasement)",
+        type:"text",
+        q:"Wie nennt man die Politik, mit Zugeständnissen einen Krieg vermeiden zu wollen (Begriff, deutsch oder englisch)?",
+        acceptAny:["appeasement", "beschwichtigungspolitik", "beschwichtigung", "nachgiebigkeitspolitik", "politik der beschwichtigung"],
+        acceptContainsAll:[["beschwichtig"], ["appeasement"]],
+        hint:"Deutsch: Beschwichtigungspolitik. Englisch: Appeasement.",
+        solution:"Beschwichtigungspolitik (Appeasement)."
+      },
+      {
+        id:28,
+        topic:"Achsenlogik (Europa–Asien)",
+        type:"mc",
+        q:"Warum konnte sich der Konflikt zu einem Weltkrieg ausweiten (Kernaussage im Material)?",
+        options:[
+          {k:"A", t:"Weil alle Staaten sofort gleichzeitig angegriffen wurden."},
+          {k:"B", t:"Weil Konflikte in Europa und Asien durch Bündnisse/Strategien gekoppelt wurden (u.a. Japan/USA)."},
+          {k:"C", t:"Weil der Völkerbund eine Weltregierung war."},
+          {k:"D", t:"Weil es keine Rohstoffe mehr gab."}
+        ],
+        correct:"B",
+        hint:"Europa + Asien/Pazifik + Bündnisse → Konflikte koppeln.",
+        solution:"Der Krieg wurde zum Weltkrieg, weil Konflikte in Europa und Asien-Pazifik durch Bündnisse und strategische Entscheidungen gekoppelt wurden (u.a. Japan vs. USA, Hitlers Bündnisse)."
+      },
+      {
+        id:29,
+        topic:"Japan–USA Konfliktlogik",
+        type:"text",
+        q:"Welche Rohstoffe/Materialien werden im Material als für Japans Industrie/Armee unverzichtbar genannt (USA-Embargo)? Nenne zwei.",
+        acceptContainsAll:[
+          ["oel"], ["stahl"]
+        ],
+        acceptAny:[
+          "Öl und Stahl",
+          "Oel und Stahl",
+          "Stahl und Öl"
+        ],
+        hint:"Zwei Wörter: Öl + Stahl.",
+        solution:"Öl und Stahl (USA-Embargo gegen Japan)."
+      },
+      {
+        id:30,
+        topic:"Kartenkompetenz – Eskalationskette",
+        type:"text",
+        q:"Formuliere eine kurze Eskalationskette (mind. 3 Stationen) von 1938 bis Sept. 1939: Welche Schritte führen Richtung Krieg? (Stichworte reichen.)",
+        acceptContainsAll:[
+          ["anschluss"],
+          ["sudeten"],
+          ["polen"]
+        ],
+        acceptAny:[
+          "Anschluss → Sudetenland (München) → Rest-Tschechoslowakei → Ultimatum/Angriff auf Polen",
+          "Anschluss, Sudetenland, Besetzung Tschechoslowakei, Polen",
+          "Anschluss 1938, Sudetenland, Einmarsch Tschechoslowakei, Angriff auf Polen"
+        ],
+        hint:"Bausteine: Anschluss – Sudetenland – Rest-Tschechoslowakei – Ultimatum/Angriff auf Polen – Pakt 1939.",
+        solution:"Beispielkette: Anschluss (1938) → Sudetenland/München (1938) → Besetzung Rest-Tschechoslowakei (1939) → Ultimatum/Angriff auf Polen (1.9.1939) (optional: vorher Nichtangriffspakt mit UdSSR)."
+      }
+    ];
+
+    // ---------- State ----------
+    const state = {
+      idx: 0,
+      attempts: {},        // per question id: number wrong attempts in current question
+      results: {},         // per question id: {answer, correct, attempts, hintShown, solutionShown, timestamp}
+      correctCount: 0,
+      wrongCount: 0,       // total wrong submissions (not per question)
+      startedAt: Date.now()
+    };
+
+    // ---------- DOM ----------
+    const el = {
+      btnReset: document.getElementById("btnReset"),
+      btnExport: document.getElementById("btnExport"),
+      btnJumpOverview: document.getElementById("btnJumpOverview"),
+
+      metaLeft: document.getElementById("metaLeft"),
+      metaRight: document.getElementById("metaRight"),
+      fill: document.getElementById("fill"),
+
+      qnum: document.getElementById("qnum"),
+      qtopic: document.getElementById("qtopic"),
+      qtext: document.getElementById("qtext"),
+
+      choices: document.getElementById("choices"),
+      answerInput: document.getElementById("answerInput"),
+      btnCheck: document.getElementById("btnCheck"),
+      btnSkip: document.getElementById("btnSkip"),
+
+      feedback: document.getElementById("feedback"),
+      fbLine1: document.getElementById("fbLine1"),
+      fbLine2: document.getElementById("fbLine2"),
+
+      solution: document.getElementById("solution"),
+      solText: document.getElementById("solText"),
+
+      statProgress: document.getElementById("statProgress"),
+      statCorrect: document.getElementById("statCorrect"),
+      statWrong: document.getElementById("statWrong"),
+      statExport: document.getElementById("statExport"),
+    };
+
+    // ---------- Render ----------
+    function updateStats(){
+      const done = Object.keys(state.results).length;
+      const pct = Math.round((done / QUESTIONS.length) * 100);
+      el.statProgress.textContent = `${pct}%`;
+      el.statCorrect.textContent = String(state.correctCount);
+      el.statWrong.textContent = String(state.wrongCount);
+
+      el.metaLeft.textContent = `Frage ${state.idx + 1} von ${QUESTIONS.length}`;
+      el.metaRight.textContent = `Richtig: ${state.correctCount} · Falsch: ${state.wrongCount}`;
+
+      el.fill.style.width = `${pct}%`;
+    }
+
+    function showFeedback(kind, line1, line2){
+      el.feedback.className = "feedback show";
+      el.feedback.classList.remove("ok","bad","warn");
+      if(kind) el.feedback.classList.add(kind);
+      el.fbLine1.textContent = line1 || "";
+      el.fbLine2.textContent = line2 || "";
+    }
+    function hideFeedback(){
+      el.feedback.className = "feedback";
+      el.fbLine1.textContent = "";
+      el.fbLine2.textContent = "";
+    }
+
+    function showSolution(text){
+      el.solution.classList.add("show");
+      el.solText.textContent = text || "";
+    }
+    function hideSolution(){
+      el.solution.classList.remove("show");
+      el.solText.textContent = "";
+    }
+
+    function renderQuestion(){
+      const q = QUESTIONS[state.idx];
+      if(!q) return;
+
+      // reset per-question UI
+      hideFeedback();
+      hideSolution();
+      el.answerInput.value = "";
+      el.answerInput.focus();
+
+      el.qnum.textContent = `Frage ${state.idx + 1}`;
+      el.qtopic.textContent = q.topic;
+      el.qtext.textContent = q.q;
+
+      // choices (MC)
+      if(q.type === "mc"){
+        el.choices.style.display = "grid";
+        el.choices.innerHTML = "";
+        q.options.forEach((op, i) => {
+          const div = document.createElement("div");
+          div.className = "choice";
+          div.setAttribute("data-letter", op.k);
+          div.innerHTML = `
+            <div class="letter">${op.k}</div>
+            <div class="ctext">${op.t}</div>
+          `;
+          div.addEventListener("click", () => {
+            el.answerInput.value = op.k;
+            checkAnswer();
+          });
+          el.choices.appendChild(div);
+        });
+      } else {
+        el.choices.style.display = "none";
+        el.choices.innerHTML = "";
+      }
+
+      // attempts init
+      if(typeof state.attempts[q.id] !== "number") state.attempts[q.id] = 0;
+
+      // allow "Weiter" only if already solved/solution-shown
+      const r = state.results[q.id];
+      el.btnSkip.disabled = !(r && (r.correct || r.solutionShown));
+      updateStats();
+    }
+
+    // ---------- Evaluation ----------
+    function isCorrect(q, userAnswer){
+      const raw = (userAnswer ?? "").trim();
+      if(!raw) return {ok:false, why:"empty"};
+
+      if(q.type === "mc"){
+        const L = sanitizeLetter(raw);
+        if(!L) return {ok:false, why:"noletter"};
+        return {ok: L === q.correct, normalized:L};
+      }
+
+      // text:
+      // 1) direct equals any accepted
+      if(q.acceptAny && equalsAny(raw, q.acceptAny)) return {ok:true, normalized:norm(raw)};
+
+      // 2) containsAll patterns: if any pattern matches
+      if(q.acceptContainsAll && Array.isArray(q.acceptContainsAll)){
+        const matched = q.acceptContainsAll.some(pattern => includesAll(raw, pattern));
+        if(matched) return {ok:true, normalized:norm(raw)};
+      }
+
+      // 3) light synonym handling: accept common equivalences globally
+      const a = norm(raw);
+      const globalSynPairs = [
+        ["appeasement","beschwichtigung"],
+        ["molotow","molotov"],
+        ["ribbentrop","ribentrop"],
+        ["aethiopien","aethiopien"],
+        ["aethiopien","aethiopien"],
+        ["aethiopien","äthiopien"],
+        ["oel","öl"]
+      ];
+      for(const [x,y] of globalSynPairs){
+        if(a.includes(x) && a.includes(y)) return {ok:true, normalized:a};
+      }
+
+      return {ok:false, normalized:norm(raw)};
+    }
+
+    // ---------- Attempts logic ----------
+    const AUTO_ADVANCE_MS_CORRECT = 1200;
+    const AUTO_ADVANCE_MS_SOLUTION = 3500; // Musterlösung länger einblenden
+
+    function recordResult(q, userAnswer, correct, extra={}){
+      state.results[q.id] = {
+        id: q.id,
+        topic: q.topic,
+        question: q.q,
+        type: q.type,
+        userAnswer: userAnswer ?? "",
+        correct: !!correct,
+        attemptsWrong: state.attempts[q.id] ?? 0,
+        hintShown: !!extra.hintShown,
+        solutionShown: !!extra.solutionShown,
+        hintText: extra.hintText ?? "",
+        solutionText: q.solution ?? "",
+        timestamp: new Date().toISOString()
+      };
+    }
+
+    function advance(){
+      if(state.idx < QUESTIONS.length - 1){
+        state.idx++;
+        renderQuestion();
+      } else {
+        // end
+        hideFeedback();
+        showSolution("Fertig! Du kannst jetzt exportieren oder resetten. (Export enthält alle Musterlösungen.)");
+        showFeedback("ok", "✔ Quiz abgeschlossen", `Richtig: ${state.correctCount} · Falsch: ${state.wrongCount} · Export bereit.`);
+        el.btnSkip.disabled = true;
+        updateStats();
+      }
+    }
+
+    function checkAnswer(){
+      const q = QUESTIONS[state.idx];
+      if(!q) return;
+
+      const userAnswer = el.answerInput.value;
+      const result = isCorrect(q, userAnswer);
+
+      // if already solved, still allow checking but do not double count
+      const already = state.results[q.id] && (state.results[q.id].correct || state.results[q.id].solutionShown);
+
+      if(result.ok){
+        showFeedback("ok", "Richtig.", "Weiter zur nächsten Frage …");
+        hideSolution();
+
+        if(!already){
+          state.correctCount++;
+          recordResult(q, userAnswer, true, {hintShown:false, solutionShown:false});
+        }
+        updateStats();
+        el.btnSkip.disabled = false;
+
+        setTimeout(() => advance(), AUTO_ADVANCE_MS_CORRECT);
+        return;
+      }
+
+      // wrong:
+      if(!already){
+        state.wrongCount++;
+      }
+      state.attempts[q.id] = (state.attempts[q.id] || 0) + 1;
+      const a = state.attempts[q.id];
+
+      if(a === 1){
+        showFeedback("bad", "Falsch.", "Versuch 2: Du bekommst gleich einen Hinweis, wenn es nochmals falsch ist.");
+        hideSolution();
+        recordResult(q, userAnswer, false, {hintShown:false, solutionShown:false});
+        el.btnSkip.disabled = true;
+      } else if(a === 2){
+        showFeedback("warn", "Noch nicht.", `Hinweis: ${q.hint}`);
+        hideSolution();
+        recordResult(q, userAnswer, false, {hintShown:true, hintText:q.hint, solutionShown:false});
+        el.btnSkip.disabled = true;
+      } else {
+        // third wrong: show solution + auto advance like correct
+        showFeedback("warn", "Musterlösung wird eingeblendet.", "Danach geht es automatisch weiter (wie bei richtig).");
+        showSolution(q.solution);
+        recordResult(q, userAnswer, false, {hintShown:true, hintText:q.hint, solutionShown:true});
+        el.btnSkip.disabled = false;
+        updateStats();
+
+        setTimeout(() => advance(), AUTO_ADVANCE_MS_SOLUTION);
+      }
+
+      updateStats();
+    }
+
+    // ---------- Export ----------
+    function escapeHtml(s){
+      return (s ?? "").toString()
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;");
+    }
+
+    function buildExportHtml(){
+      const now = new Date();
+      const done = Object.keys(state.results).length;
+      const pct = Math.round((done / QUESTIONS.length) * 100);
+
+      const rows = QUESTIONS.map((q, i) => {
+        const r = state.results[q.id] || {};
+        const status = (r.correct === true) ? "Richtig" : (r.solutionShown ? "Gelöst (Musterlösung)" : "Offen");
+        const ua = r.userAnswer ?? "";
+        const hint = r.hintShown ? (r.hintText || q.hint || "") : "";
+        const sol = q.solution || "";
+        const att = (typeof r.attemptsWrong === "number") ? r.attemptsWrong : (state.attempts[q.id] ?? 0);
+
+        const optHtml = (q.type === "mc")
+          ? `<div style="margin-top:6px; color:#334155;">
+               <b>Optionen:</b>
+               <ol style="margin:6px 0 0 18px; padding:0;">
+                 ${q.options.map(op => `<li><b>${escapeHtml(op.k)}.</b> ${escapeHtml(op.t)}</li>`).join("")}
+               </ol>
+               <div style="margin-top:6px;"><b>Korrekt:</b> ${escapeHtml(q.correct)}</div>
+             </div>`
+          : "";
+
+        return `
+          <tr>
+            <td style="vertical-align:top; padding:10px; border-bottom:1px solid #e2e8f0;">${i+1}</td>
+            <td style="vertical-align:top; padding:10px; border-bottom:1px solid #e2e8f0;">
+              <div style="font-weight:800;">${escapeHtml(q.topic)}</div>
+              <div style="margin-top:4px;">${escapeHtml(q.q)}</div>
+              ${optHtml}
+            </td>
+            <td style="vertical-align:top; padding:10px; border-bottom:1px solid #e2e8f0;">
+              <div><b>Status:</b> ${escapeHtml(status)}</div>
+              <div style="margin-top:6px;"><b>Deine Antwort:</b><br/><span style="white-space:pre-wrap;">${escapeHtml(ua || "—")}</span></div>
+              <div style="margin-top:6px;"><b>Falschversuche (für diese Frage):</b> ${att}</div>
+              <div style="margin-top:6px;"><b>Hinweis (falls angezeigt):</b><br/><span style="white-space:pre-wrap;">${escapeHtml(hint || "—")}</span></div>
+              <div style="margin-top:6px;"><b>Musterlösung:</b><br/><span style="white-space:pre-wrap;">${escapeHtml(sol || "—")}</span></div>
+            </td>
+          </tr>
+        `;
+      }).join("");
+
+      const sources = `
+        <ul style="margin:6px 0 0 18px;">
+          <li><a href="https://www.dropbox.com/scl/fi/knuiodyfpkrss99rs0k3e/Hitlers-Au-enpolitik-einfach-erkl-rt-Nationalsozialismus-Zusammenfassung.mp4?rlkey=75slz5hma2kl0y8ancz4fy7zg&st=w334ws6i&dl=0">Hitlers Außenpolitik – einfach erklärt</a></li>
+          <li><a href="https://www.dropbox.com/scl/fi/utcowt6swwv4vepw303s7/10-Fakten-die-man-ber-den-Zweiten-Weltkrieg-wissen-muss-MrWissen2go-Terra-X.mp4?rlkey=qg8pftppfi3w1nw5rl8gpaojb&st=yp92bxac&dl=0">10 Fakten – MrWissen2go</a></li>
+          <li><a href="https://www.dropbox.com/scl/fi/4b9l38h5p2sjn7fxtdp/Der-Zweite-Weltkrieg-Zusammenfassung-auf-einer-Karte.mp4?rlkey=d2btsj1rxm17milgcm5tpbtbl&st=lv51n1ou&dl=0">Zusammenfassung auf einer Karte</a></li>
+          <li><a href="https://www.dropbox.com/scl/fi/u2c05txj2xf1bnnxpnxc7/Der-Gesamte-Zweite-Weltkrieg-Aus-Deutscher-Sicht-Dokumentation-in-REINER-FARBE.mp4?rlkey=eb3vw9b507w52ndxdkp91prih&st=9vxqy4ue&dl=0">Gesamte Doku (Farbe)</a></li>
+        </ul>
+      `;
+
+      return `
+        <!doctype html>
+        <html lang="de">
+        <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <title>Export – Vorgeschichte Zweiter Weltkrieg (30 Fragen)</title>
+          <style>
+            body{ font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; margin:24px; color:#0f172a; }
+            h1{ margin:0 0 8px; }
+            .meta{ color:#334155; margin-bottom:16px; }
+            .box{ border:1px solid #e2e8f0; border-radius:14px; padding:14px; margin:12px 0; background:#f8fafc; }
+            table{ width:100%; border-collapse:collapse; }
+            th{ text-align:left; padding:10px; background:#0f172a; color:white; }
+            @media print{
+              a{ color:#0f172a; text-decoration:none; }
+              .noprint{ display:none; }
+            }
+          </style>
+        </head>
+        <body>
+          <h1>Export: Vorgeschichte zum Zweiten Weltkrieg – 30 Fragen</h1>
+          <div class="meta">
+            <div><b>Datum:</b> ${escapeHtml(now.toLocaleString())}</div>
+            <div><b>Fortschritt:</b> ${pct}% (${done}/${QUESTIONS.length})</div>
+            <div><b>Richtig:</b> ${state.correctCount} · <b>Falsch (gesamt):</b> ${state.wrongCount}</div>
+          </div>
+
+          <div class="box">
+            <b>Quellen-Videos (externe Links):</b>
+            ${sources}
+          </div>
+
+          <div class="box noprint">
+            <b>PDF:</b> Im Browser „Drucken“ → „Als PDF sichern“.
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th style="width:70px;">#</th>
+                <th>Frage</th>
+                <th>Antworten / Musterlösung</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows}
+            </tbody>
+          </table>
+        </body>
+        </html>
+      `;
+    }
+
+    function downloadFile(filename, content, mime="text/html"){
+      const blob = new Blob([content], {type: mime});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    function exportDialog(){
+      const html = buildExportHtml();
+
+      // simple choice: download + print window
+      const dlg = document.createElement("div");
+      dlg.style.position = "fixed";
+      dlg.style.inset = "0";
+      dlg.style.background = "rgba(0,0,0,.55)";
+      dlg.style.display = "grid";
+      dlg.style.placeItems = "center";
+      dlg.style.zIndex = "9999";
+      dlg.innerHTML = `
+        <div style="
+          width:min(640px, calc(100vw - 24px));
+          border-radius:20px;
+          background: rgba(15,22,36,.98);
+          color:#e9eefc;
+          outline:1px solid rgba(255,255,255,.14);
+          box-shadow: 0 30px 80px rgba(0,0,0,.55);
+          padding:16px;">
+          <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
+            <div>
+              <div style="font-weight:900; font-size:16px;">Export</div>
+              <div style="color:#a9b6d6; font-size:12px; margin-top:4px;">
+                Enthält alle Fragen, deine Antworten, Hinweise und <b>Musterlösungen</b>.
+              </div>
+            </div>
+            <button id="xClose" style="
+              border:none; cursor:pointer; font-weight:900;
+              border-radius:999px; padding:8px 12px;
+              color:#e9eefc; background: rgba(255,255,255,.10);
+              outline: 1px solid rgba(255,255,255,.18);">✕</button>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button id="xDownload" style="
+              border:none; cursor:pointer; font-weight:900;
+              border-radius:999px; padding:10px 14px;
+              color:#e9eefc; background: rgba(122,167,255,.16);
+              outline: 1px solid rgba(122,167,255,.35);">⬇️ HTML-Datei herunterladen</button>
+
+            <button id="xPrint" style="
+              border:none; cursor:pointer; font-weight:900;
+              border-radius:999px; padding:10px 14px;
+              color:#e9eefc; background: rgba(125,255,139,.12);
+              outline: 1px solid rgba(125,255,139,.35);">🖨️ Druckansicht (PDF)</button>
+
+            <button id="xJSON" style="
+              border:none; cursor:pointer; font-weight:900;
+              border-radius:999px; padding:10px 14px;
+              color:#e9eefc; background: rgba(255,255,255,.08);
+              outline: 1px solid rgba(255,255,255,.18);">🧾 JSON-Protokoll</button>
+          </div>
+
+          <div style="margin-top:10px; color:#a9b6d6; font-size:12px; line-height:1.35;">
+            Tipp: Für PDF → „Druckansicht“ öffnen und im Druckdialog „Als PDF sichern“ wählen.
+          </div>
+        </div>
+      `;
+      document.body.appendChild(dlg);
+
+      function close(){ dlg.remove(); }
+
+      dlg.querySelector("#xClose").addEventListener("click", close);
+      dlg.addEventListener("click", (e) => { if(e.target === dlg) close(); });
+
+      dlg.querySelector("#xDownload").addEventListener("click", () => {
+        const stamp = new Date().toISOString().slice(0,19).replaceAll(":","-");
+        downloadFile(`Export_Vorgeschichte_ZweiterWK_${stamp}.html`, html, "text/html");
+      });
+
+      dlg.querySelector("#xPrint").addEventListener("click", () => {
+        const w = window.open("", "_blank");
+        if(!w){ alert("Pop-up blockiert. Bitte Pop-ups erlauben oder HTML herunterladen."); return; }
+        w.document.open();
+        w.document.write(html);
+        w.document.close();
+        // wait a tick to ensure rendering
+        setTimeout(() => { w.focus(); w.print(); }, 350);
+      });
+
+      dlg.querySelector("#xJSON").addEventListener("click", () => {
+        const payload = {
+          meta: {
+            createdAt: new Date().toISOString(),
+            progress: { done: Object.keys(state.results).length, total: QUESTIONS.length },
+            correct: state.correctCount,
+            wrong: state.wrongCount
+          },
+          results: QUESTIONS.map(q => state.results[q.id] || {
+            id:q.id, topic:q.topic, question:q.q, type:q.type,
+            userAnswer:"", correct:false, attemptsWrong: state.attempts[q.id] || 0,
+            hintShown:false, solutionShown:false, hintText:"", solutionText:q.solution || ""
+          })
+        };
+        const stamp = new Date().toISOString().slice(0,19).replaceAll(":","-");
+        downloadFile(`Protokoll_Vorgeschichte_ZweiterWK_${stamp}.json`, JSON.stringify(payload, null, 2), "application/json");
+      });
+    }
+
+    // ---------- Reset ----------
+    function hardReset(){
+      if(!confirm("Wirklich alles zurücksetzen? (Fortschritt/Antworten werden gelöscht.)")) return;
+
+      state.idx = 0;
+      state.attempts = {};
+      state.results = {};
+      state.correctCount = 0;
+      state.wrongCount = 0;
+      state.startedAt = Date.now();
+
+      renderQuestion();
+      updateStats();
+      showFeedback("ok","Zurückgesetzt.","Du startest wieder bei Frage 1.");
+      setTimeout(() => hideFeedback(), 1200);
+    }
+
+    // ---------- Events ----------
+    el.btnCheck.addEventListener("click", checkAnswer);
+    el.answerInput.addEventListener("keydown", (e) => {
+      if(e.key === "Enter"){
+        e.preventDefault();
+        checkAnswer();
+      }
+      // Quick MC selection by number keys 1-4
+      const q = QUESTIONS[state.idx];
+      if(q && q.type === "mc"){
+        if(["1","2","3","4"].includes(e.key)){
+          const idx = parseInt(e.key,10) - 1;
+          if(q.options[idx]){
+            el.answerInput.value = q.options[idx].k;
+            checkAnswer();
+          }
+        }
+      }
+    });
+
+    el.btnSkip.addEventListener("click", () => {
+      const q = QUESTIONS[state.idx];
+      const r = state.results[q.id];
+      if(r && (r.correct || r.solutionShown)){
+        advance();
+      } else {
+        showFeedback("warn", "Noch nicht.", "Weiter ist erst möglich, wenn du richtig bist oder nach dem 3. Fehlversuch die Musterlösung gesehen hast.");
+      }
+    });
+
+    el.btnReset.addEventListener("click", hardReset);
+    el.btnExport.addEventListener("click", exportDialog);
+
+    el.btnJumpOverview.addEventListener("click", () => {
+      document.getElementById("overviewAnchor").scrollIntoView({behavior:"smooth", block:"start"});
+    });
+
+    // ---------- Init ----------
+    renderQuestion();
+    updateStats();
+  </script>
+</body>
+</html>
